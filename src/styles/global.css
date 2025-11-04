@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.145 0 0);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.145 0 0);
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.145 0 0);
+  --color-primary: oklch(0.451 0.124 147.73);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.773 0.104 85.71);
+  --color-secondary-foreground: oklch(0.145 0 0);
+  --color-muted: oklch(0.97 0 0);
+  --color-muted-foreground: oklch(0.556 0 0);
+  --color-accent: oklch(0.773 0.104 85.71);
+  --color-accent-foreground: oklch(0.145 0 0);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: oklch(0.98 0 0);
+  --color-border: oklch(0.922 0 0);
+  --color-input: oklch(0.922 0 0);
+  --color-ring: oklch(0.451 0.124 147.73);
+  --radius: 0.625rem;
+
+  --color-*-dark: initial;
+  --color-background-dark: oklch(0.145 0 0);
+  --color-foreground-dark: oklch(0.985 0 0);
+  --color-card-dark: oklch(0.205 0 0);
+  --color-card-foreground-dark: oklch(0.985 0 0);
+  --color-popover-dark: oklch(0.205 0 0);
+  --color-popover-foreground-dark: oklch(0.985 0 0);
+  --color-primary-dark: oklch(0.647 0.124 147.73);
+  --color-primary-foreground-dark: oklch(0.145 0 0);
+  --color-secondary-dark: oklch(0.573 0.104 85.71);
+  --color-secondary-foreground-dark: oklch(0.985 0 0);
+  --color-muted-dark: oklch(0.269 0 0);
+  --color-muted-foreground-dark: oklch(0.708 0 0);
+  --color-accent-dark: oklch(0.573 0.104 85.71);
+  --color-accent-foreground-dark: oklch(0.985 0 0);
+  --color-destructive-dark: oklch(0.704 0.191 22.216);
+  --color-destructive-foreground-dark: oklch(0.98 0 0);
+  --color-border-dark: oklch(1 0 0 / 10%);
+  --color-input-dark: oklch(1 0 0 / 15%);
+  --color-ring-dark: oklch(0.647 0.124 147.73);
+}
+
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+  background-color: theme(colors.background);
+  color: theme(colors.foreground);
+  font-family: theme(fontFamily.sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  border-color: theme(colors.border);
+}
+
+*:focus-visible {
+  outline: 2px solid theme(colors.ring);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.aspect-4\/3 {
+  aspect-ratio: 4 / 3;
+}
+
+img[src*="placeholder"] {
+  background-color: theme(colors.muted);
+  color: theme(colors.muted-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

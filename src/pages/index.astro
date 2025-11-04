@@ -1,0 +1,164 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Button } from '@/components/ui/button';
+import { SearchBar } from '@/components/search-bar';
+import { UnitCard } from '@/components/unit-card';
+import { AmenitiesSection } from '@/components/amenities-section';
+import { MapSection } from '@/components/map-section';
+import { ArrowRight, Flame, Gamepad2, Trees } from '@lucide/astro';
+
+const featuredUnits = [
+  {
+    id: "1",
+    name: "The Pioneer",
+    image: "/rustic-shipping-container-home-exterior-with-wood-.jpg",
+    sleeps: 4,
+    beds: 2,
+    baths: 1,
+    pricePerNight: 145,
+  },
+  {
+    id: "2",
+    name: "The Voyager",
+    image: "/modern-container-home-interior-with-cozy-lighting.jpg",
+    sleeps: 2,
+    beds: 1,
+    baths: 1,
+    pricePerNight: 125,
+  },
+  {
+    id: "3",
+    name: "The Settler",
+    image: "/industrial-chic-container-home-with-fire-pit-view.jpg",
+    sleeps: 6,
+    beds: 3,
+    baths: 2,
+    pricePerNight: 185,
+  },
+];
+---
+
+<Layout>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('/shipping-container-homes-in-louisiana-bayou-settin.jpg')"
+      >
+        <div class="absolute inset-0 bg-linear-to-b from-black/40 via-black/30 to-black/60"></div>
+      </div>
+
+      <div class="relative z-10 container mx-auto px-4 text-center text-white">
+        <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4 text-balance">From Port to Campfire</h1>
+        <p class="text-xl md:text-2xl mb-8 text-balance max-w-2xl mx-auto">
+          Experience rustic-industrial luxury in converted shipping container homes nestled in Louisiana bayou country
+        </p>
+
+        <div class="max-w-4xl mx-auto">
+          <SearchBar client:load />
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Units -->
+    <section class="py-16 md:py-24 bg-background">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-primary">Featured Container Homes</h2>
+          <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Each unit is uniquely designed with rustic-industrial charm and modern comforts
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {featuredUnits.map((unit) => (
+            <UnitCard unit={unit} client:visible />
+          ))}
+        </div>
+
+        <div class="text-center">
+          <Button 
+            size="lg" 
+            disabled 
+            className="bg-muted text-muted-foreground cursor-not-allowed opacity-60" 
+            client:visible
+          >
+            <span class="flex items-center">
+              View All Units
+              <ArrowRight class="ml-2 h-5 w-5" />
+            </span>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shared Amenities -->
+    <AmenitiesSection client:visible />
+
+    <!-- Location Section -->
+    <section class="py-16 md:py-24 bg-card">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary">Your Bayou Escape Awaits</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+              Located in Covington, Louisiana, Bayou Boxables offers the perfect blend of natural beauty and
+              accessibility. Just an hour from downtown New Orleans and MSY Airport, our private property provides a
+              peaceful retreat while keeping you connected to the vibrant culture of Louisiana.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <Trees class="h-6 w-6 text-primary shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold mb-1">Natural Setting</h3>
+                  <p class="text-muted-foreground">Surrounded by Louisiana's beautiful bayou landscape</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <Flame class="h-6 w-6 text-secondary shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold mb-1">Shared Fire Pit</h3>
+                  <p class="text-muted-foreground">Gather around the communal fire pit for evening stories</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <Gamepad2 class="h-6 w-6 text-primary shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold mb-1">Outdoor Games</h3>
+                  <p class="text-muted-foreground">Oversized yard games for all ages</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <MapSection client:visible />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-primary text-primary-foreground">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-balance">
+          Ready for Your Container Adventure?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto text-balance opacity-90">
+          Book your stay at Bayou Boxables and experience the unique charm of converted shipping container living
+        </p>
+        <Button 
+          size="lg" 
+          disabled 
+          className="bg-muted text-muted-foreground cursor-not-allowed opacity-60" 
+          client:visible
+        >
+          <span class="flex items-center">
+            Explore Available Dates
+            <ArrowRight class="ml-2 h-5 w-5" />
+          </span>
+        </Button>
+      </div>
+    </section>
+  </main>
+</Layout>

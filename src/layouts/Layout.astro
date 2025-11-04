@@ -1,0 +1,29 @@
+---
+import { Navigation } from '@/components/navigation';
+import { PreviewBanner } from '@/components/preview-banner';
+import '@/styles/global.css';
+
+const { 
+  title = 'Bayou Boxables | From Port to Campfire',
+  description = 'Unique converted shipping container homes in Covington, LA. Experience rustic-industrial luxury near New Orleans.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-sans antialiased bg-background text-foreground">
+    <PreviewBanner client:load />
+    <Navigation client:load />
+    <slot />
+  </body>
+</html>
