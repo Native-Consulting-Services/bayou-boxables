@@ -25,12 +25,18 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <span className="text-muted-foreground cursor-not-allowed opacity-60">
+            <a
+              href="/explore"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Explore
-            </span>
-            <span className="text-muted-foreground cursor-not-allowed opacity-60">
+            </a>
+            <a
+              href="/about"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               About
-            </span>
+            </a>
             <span className="text-muted-foreground cursor-not-allowed opacity-60">
               FAQs
             </span>

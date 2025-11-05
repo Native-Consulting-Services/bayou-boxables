@@ -45,8 +45,7 @@ export function ComingSoonDialog({
           </p>
           <Button
             onClick={() => {
-              window.location.href =
-                "mailto:invest@bayouboxables.com?subject=Investment Inquiry";
+              window.location.href = "/invest";
             }}
             className="w-full bg-primary hover:bg-primary/90"
             size="lg"

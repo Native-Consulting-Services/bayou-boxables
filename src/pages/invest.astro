@@ -1,0 +1,170 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { InvestorForm } from '@/components/investor-form';
+import { TrendingUp, Users, Leaf, DollarSign, Target, Award } from '@lucide/astro';
+---
+
+<Layout 
+  title="Investment Opportunities | Bayou Boxables"
+  description="Join us in bringing unique rustic-industrial container home hospitality to Louisiana's bayou country. Learn about investment opportunities."
+>
+  <main class="min-h-screen">
+    {/* Hero Section */}
+    <section class="relative py-20 md:py-32 bg-linear-to-br from-primary to-primary/80 text-primary-foreground overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: url('/shipping-container-homes-in-louisiana-bayou-settin.jpg'); background-size: cover; background-position: center;"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="font-serif text-4xl md:text-6xl font-bold mb-6 text-balance">
+            Invest in the Future of Bayou Hospitality
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed text-balance">
+            Join us in creating a unique rustic-industrial retreat that combines sustainable design, Louisiana charm, and innovative hospitality
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Value Proposition */}
+    <section class="py-16 md:py-24 bg-background">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4 text-primary">Why Invest in Bayou Boxables?</h2>
+            <p class="text-lg text-muted-foreground">
+              A unique opportunity at the intersection of sustainable tourism, innovative design, and Louisiana culture
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="p-6 rounded-lg border bg-card">
+              <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                <TrendingUp class="h-6 w-6 text-secondary" />
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Growing Market</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                The alternative accommodation market is booming, with travelers seeking unique, Instagram-worthy experiences beyond traditional hotels.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-lg border bg-card">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                <Leaf class="h-6 w-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Sustainable Design</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Repurposed shipping containers offer eco-friendly construction with lower environmental impact and strong appeal to conscious travelers.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-lg border bg-card">
+              <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                <Target class="h-6 w-6 text-secondary" />
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Prime Location</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Covington, LA offers proximity to New Orleans tourism while providing a peaceful bayou retreat - the best of both worlds.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-lg border bg-card">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                <Award class="h-6 w-6 text-primary" />
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Unique Positioning</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                No direct competitors in the region offering this rustic-industrial container home experience with Southern hospitality.
+              </p>
+            </div>
+          </div>
+
+          {/* Investment Highlights */}
+          <div class="bg-card border rounded-lg p-8 mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-center">Investment Highlights</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div class="text-3xl font-bold text-primary mb-2">10</div>
+                <div class="text-sm text-muted-foreground">Unique Container Units</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-secondary mb-2">$125-185</div>
+                <div class="text-sm text-muted-foreground">Nightly Rate Range</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-primary mb-2">60 min</div>
+                <div class="text-sm text-muted-foreground">From New Orleans</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Use of Funds */}
+          <div class="mb-16">
+            <h3 class="text-2xl font-bold mb-6 text-center">Planned Use of Investment</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                  <DollarSign class="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Property Development & Construction</h4>
+                  <p class="text-muted-foreground text-sm">
+                    Complete container conversion, site preparation, utilities, and landscaping
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                  <DollarSign class="h-5 w-5 text-secondary" />
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Furnishings & Amenities</h4>
+                  <p class="text-muted-foreground text-sm">
+                    High-quality rustic-industrial furnishings, shared fire pit area, and outdoor games
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                  <DollarSign class="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Marketing & Launch</h4>
+                  <p class="text-muted-foreground text-sm">
+                    Brand development, website, photography, and initial marketing campaigns
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                  <DollarSign class="h-5 w-5 text-secondary" />
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Operations & Working Capital</h4>
+                  <p class="text-muted-foreground text-sm">
+                    Initial operating expenses, staffing, and reserve funds
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Investment Form */}
+    <section class="py-16 md:py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4 text-primary">Express Your Interest</h2>
+          <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Fill out the form below to learn more about investment opportunities and next steps
+          </p>
+        </div>
+
+        <InvestorForm client:load />
+      </div>
+    </section>
+  </main>
+</Layout>

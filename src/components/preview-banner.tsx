@@ -25,8 +25,7 @@ export function PreviewBanner() {
             variant="outline"
             className="hidden md:inline-flex bg-transparent border-secondary-foreground/20 hover:bg-secondary-foreground/10"
             onClick={() => {
-              window.location.href =
-                "mailto:invest@bayouboxables.com?subject=Investment Inquiry";
+              window.location.href = "/invest";
             }}
           >
             <Mail className="h-4 w-4 mr-2" />

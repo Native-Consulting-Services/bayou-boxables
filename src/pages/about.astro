@@ -1,0 +1,132 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Heart, Leaf, Users, ArrowRight } from 'lucide-react';
+---
+
+<Layout 
+  title="About Us | Bayou Boxables"
+  description="Learn about Bayou Boxables and our mission to transform shipping containers into unforgettable bayou experiences in Louisiana."
+>
+  <main class="min-h-screen bg-background">
+    {/* Hero Section */}
+    <section class="relative h-[400px] flex items-center justify-center overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('/shipping-container-homes-in-louisiana-bayou-settin.jpg')"
+      >
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 text-center text-white">
+        <h1 class="font-serif text-5xl md:text-6xl font-bold mb-4 text-balance">Our Story</h1>
+        <p class="text-xl md:text-2xl text-balance max-w-2xl mx-auto">
+          Transforming shipping containers into unforgettable bayou experiences
+        </p>
+      </div>
+    </section>
+
+    {/* Main Content */}
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto space-y-12">
+          {/* Introduction */}
+          <div>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6 text-primary">
+              From Port to Campfire: A Vision Realized
+            </h2>
+            <div class="space-y-4 text-lg leading-relaxed">
+              <p>
+                Bayou Boxables was born from a simple idea: what if we could take the industrial strength and
+                character of shipping containers and transform them into cozy, sustainable retreats in the heart of
+                Louisiana bayou country?
+              </p>
+              <p>
+                In 2023, we acquired a beautiful piece of land in Covington, Louisiana, just an hour from the vibrant
+                culture of New Orleans. What started as a passion project quickly became a labor of love, as we
+                carefully designed and built each container home to blend rustic charm with modern comfort.
+              </p>
+              <p>
+                Today, Bayou Boxables offers six unique container homes, each with its own personality and story.
+                We're proud to provide a one-of-a-kind lodging experience that celebrates sustainable design,
+                Louisiana's natural beauty, and the warmth of Southern hospitality.
+              </p>
+            </div>
+          </div>
+
+          {/* Values */}
+          <div class="grid md:grid-cols-3 gap-8 py-12">
+            <Card>
+              <CardContent class="pt-6 text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <Leaf class="h-8 w-8 text-primary" />
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-3">Sustainability</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                  Repurposing shipping containers reduces waste and creates unique, eco-friendly accommodations.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent class="pt-6 text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 mb-4">
+                  <Heart class="h-8 w-8 text-secondary" />
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-3">Authenticity</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                  We embrace the industrial aesthetic while creating warm, inviting spaces that feel like home.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent class="pt-6 text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <Users class="h-8 w-8 text-primary" />
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-3">Community</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                  Shared spaces like our fire pit and yard games bring guests together for memorable moments.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Location */}
+          <div class="mb-12">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6 text-primary">The Perfect Location</h2>
+            <div class="space-y-4 text-lg leading-relaxed">
+              <p>
+                Covington, Louisiana offers the best of both worlds. Nestled in the heart of bayou country, our
+                property provides a peaceful escape surrounded by natural beauty. Yet we're just an hour from downtown
+                New Orleans and MSY Airport, making us easily accessible for travelers from near and far.
+              </p>
+              <p>
+                The area is rich with Louisiana culture, from local restaurants serving authentic Cajun cuisine to
+                outdoor activities like kayaking, fishing, and wildlife watching. Whether you're seeking adventure or
+                relaxation, you'll find it here.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div class="bg-primary text-primary-foreground rounded-lg p-8 md:p-12 text-center">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4 text-balance">
+              Ready to Experience Bayou Boxables?
+            </h2>
+            <p class="text-xl mb-8 text-balance max-w-2xl mx-auto opacity-90">
+              Book your stay and discover the unique charm of container living in Louisiana bayou country
+            </p>
+            <Button asChild size="lg" variant="secondary">
+              <a href="/explore" class="inline-flex items-center">
+                Explore Our Units
+                <ArrowRight class="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
