@@ -1,0 +1,178 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { FAQAccordion } from '@/components/faq-accordion';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { HelpCircle } from 'lucide-react';
+
+const faqs = [
+  {
+    category: "Booking & Reservations",
+    questions: [
+      {
+        question: "How do I make a reservation?",
+        answer:
+          "You can book directly through our website by selecting your desired unit, choosing your dates, and completing the checkout process. You'll receive instant confirmation via email.",
+      },
+      {
+        question: "What is your cancellation policy?",
+        answer:
+          "We offer free cancellation up to 48 hours before check-in. Cancellations made between 24-48 hours before check-in receive a 50% refund. Cancellations within 24 hours are non-refundable.",
+      },
+      {
+        question: "Can I modify my reservation after booking?",
+        answer:
+          "Yes! Contact us at stay@bayouboxables.com or call (555) 123-4567 to modify your dates or unit selection, subject to availability.",
+      },
+      {
+        question: "Do you offer discounts for longer stays?",
+        answer:
+          "Yes, we offer discounts for stays of 7 nights or more. Contact us directly for weekly and monthly rates.",
+      },
+    ],
+  },
+  {
+    category: "Check-In & Check-Out",
+    questions: [
+      {
+        question: "What time is check-in and check-out?",
+        answer:
+          "Check-in is after 3:00 PM and check-out is before 11:00 AM. Early check-in or late check-out may be available upon request, subject to availability.",
+      },
+      {
+        question: "How do I access my unit?",
+        answer:
+          "You'll receive detailed directions and a unique access code via email 24 hours before your check-in date. Each unit has a keyless entry system for your convenience.",
+      },
+      {
+        question: "Is there someone on-site during my stay?",
+        answer:
+          "While we don't have 24/7 on-site staff, we're always available by phone or email for any questions or concerns during your stay.",
+      },
+    ],
+  },
+  {
+    category: "Amenities & Facilities",
+    questions: [
+      {
+        question: "What amenities are included in each unit?",
+        answer:
+          "All units include WiFi, climate control, full or partial kitchens, linens and towels, and basic toiletries. Specific amenities vary by unit - check the unit details page for complete information.",
+      },
+      {
+        question: "Is WiFi available?",
+        answer: "Yes, all units have high-speed WiFi included at no additional cost.",
+      },
+      {
+        question: "Are pets allowed?",
+        answer:
+          "We love pets! Select units are pet-friendly with a $50 pet fee per stay. Please indicate you're bringing a pet when booking.",
+      },
+      {
+        question: "What shared amenities are available?",
+        answer:
+          "Guests have access to our communal fire pit area, oversized yard games (cornhole, giant Jenga), and BBQ grills. These spaces are perfect for gathering with other guests or your group.",
+      },
+    ],
+  },
+  {
+    category: "Location & Transportation",
+    questions: [
+      {
+        question: "How far are you from New Orleans?",
+        answer:
+          "We're located in Covington, Louisiana, approximately 1 hour from downtown New Orleans and MSY Airport. It's an easy drive across the Lake Pontchartrain Causeway.",
+      },
+      {
+        question: "Do I need a car?",
+        answer:
+          "Yes, we recommend having a car as our property is in a rural area. Rideshare services are limited in the area.",
+      },
+      {
+        question: "Is parking available?",
+        answer: "Yes, each unit has dedicated parking spaces. Larger units have space for multiple vehicles.",
+      },
+      {
+        question: "What's nearby?",
+        answer:
+          "Covington has charming downtown shops and restaurants within 15 minutes. You're also close to outdoor activities like kayaking, fishing, and nature trails.",
+      },
+    ],
+  },
+  {
+    category: "Policies & Guidelines",
+    questions: [
+      {
+        question: "What is the maximum occupancy?",
+        answer:
+          "Maximum occupancy varies by unit, ranging from 2 to 8 guests. Please respect these limits for safety and comfort. Additional guests beyond the maximum are not permitted.",
+      },
+      {
+        question: "Can I host events or parties?",
+        answer:
+          "Small gatherings are allowed with prior approval, but we do not permit large parties or events. Please contact us to discuss your plans.",
+      },
+      {
+        question: "Is smoking allowed?",
+        answer: "All units are non-smoking. Smoking is permitted in designated outdoor areas only.",
+      },
+      {
+        question: "What if something breaks during my stay?",
+        answer:
+          "Please report any issues immediately so we can address them. Accidental damage should be reported, and guests are responsible for any damages beyond normal wear and tear.",
+      },
+    ],
+  },
+];
+---
+
+<Layout 
+  title="FAQs | Bayou Boxables"
+  description="Find answers to frequently asked questions about staying at Bayou Boxables container homes in Louisiana."
+>
+  <main class="min-h-screen bg-background py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        {/* Header */}
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+            <HelpCircle className="h-8 w-8 text-primary" />
+          </div>
+          <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Find answers to common questions about staying at Bayou Boxables
+          </p>
+        </div>
+
+        {/* FAQs by Category */}
+        <div class="space-y-8">
+          {faqs.map((category, categoryIndex) => (
+            <Card key={categoryIndex}>
+              <CardContent className="pt-6">
+                <h2 class="font-serif text-2xl font-bold mb-4 text-primary">{category.category}</h2>
+                <FAQAccordion 
+                  questions={category.questions} 
+                  categoryIndex={categoryIndex}
+                  client:visible 
+                />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Contact CTA */}
+        <Card className="mt-12 bg-primary text-primary-foreground">
+          <CardContent className="pt-6 text-center">
+            <h2 class="font-serif text-2xl font-bold mb-4">Still Have Questions?</h2>
+            <p class="text-lg mb-6 opacity-90">
+              We're here to help! Reach out to us and we'll get back to you as soon as possible.
+            </p>
+            <Button asChild size="lg" variant="secondary">
+              <a href="/contact">Contact Us</a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </main>
+</Layout>

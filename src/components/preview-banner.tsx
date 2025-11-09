@@ -10,7 +10,7 @@ export function PreviewBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-secondary text-secondary-foreground py-3 px-4 relative">
+    <div className="bg-secondary/70 text-secondary-foreground py-3 px-4 relative">
       <div className="container mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center gap-3 flex-1">
           <Rocket className="h-5 w-5 shrink-0" />

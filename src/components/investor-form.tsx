@@ -31,28 +31,50 @@ export function InvestorForm() {
     message: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("[v0] Investor form submitted:", formData);
-    setShowSuccess(true);
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setShowSuccess(false);
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        company: "",
-        investmentRange: "",
-        timeline: "",
-        investorType: "",
-        hasExperience: false,
-        experienceDetails: "",
-        hearAbout: "",
-        message: "",
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/myzbrkwl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (response.ok) {
+        setShowSuccess(true);
+        // Reset form after showing success
+        setTimeout(() => {
+          setShowSuccess(false);
+          setFormData({
+            fullName: "",
+            email: "",
+            phone: "",
+            company: "",
+            investmentRange: "",
+            timeline: "",
+            investorType: "",
+            hasExperience: false,
+            experienceDetails: "",
+            hearAbout: "",
+            message: "",
+          });
+        }, 3000);
+      } else {
+        setError("There was an error submitting your form. Please try again.");
+      }
+    } catch (err) {
+      setError("There was an error submitting your form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -296,9 +318,20 @@ export function InvestorForm() {
           </div>
         </div>
 
+        {error && (
+          <div className="rounded-md bg-destructive/10 p-4 text-sm text-destructive">
+            {error}
+          </div>
+        )}
+
         <div className="flex justify-end">
-          <Button type="submit" size="lg" className="min-w-[200px]">
-            Submit Investment Inquiry
+          <Button
+            type="submit"
+            size="lg"
+            className="min-w-[200px]"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Submit Investment Inquiry"}
           </Button>
         </div>
       </form>

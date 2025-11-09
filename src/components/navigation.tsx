@@ -37,19 +37,23 @@ export function Navigation() {
             >
               About
             </a>
-            <span className="text-muted-foreground cursor-not-allowed opacity-60">
-              FAQs
-            </span>
-            <span className="text-muted-foreground cursor-not-allowed opacity-60">
-              Contact
-            </span>
-            <Button
-              variant="outline"
-              disabled
-              className="opacity-60 cursor-not-allowed"
+            <a
+              href="/faqs"
+              className="text-foreground hover:text-primary transition-colors"
             >
-              <User className="h-4 w-4 mr-2" />
-              Sign In
+              FAQs
+            </a>
+            <a
+              href="/invest"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Invest
+            </a>
+            <Button variant="outline" asChild>
+              <a href="/account">
+                <User className="h-4 w-4 mr-2" />
+                {isLoggedIn ? "Account" : "Sign In"}
+              </a>
             </Button>
           </div>
 
@@ -69,18 +73,30 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-4">
-            <span className="block text-muted-foreground cursor-not-allowed opacity-60">
+            <a
+              href="/explore"
+              className="block text-foreground hover:text-primary transition-colors"
+            >
               Explore
-            </span>
-            <span className="block text-muted-foreground cursor-not-allowed opacity-60">
+            </a>
+            <a
+              href="/about"
+              className="block text-foreground hover:text-primary transition-colors"
+            >
               About
-            </span>
-            <span className="block text-muted-foreground cursor-not-allowed opacity-60">
+            </a>
+            <a
+              href="/faqs"
+              className="block text-foreground hover:text-primary transition-colors"
+            >
               FAQs
-            </span>
-            <span className="block text-muted-foreground cursor-not-allowed opacity-60">
-              Contact
-            </span>
+            </a>
+            <a
+              href="/invest"
+              className="block text-foreground hover:text-primary transition-colors"
+            >
+              Invest
+            </a>
             <Button
               variant="outline"
               disabled

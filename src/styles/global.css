@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 
 @theme {
+  /* Light mode colors */
   --color-background: oklch(1 0 0);
   --color-foreground: oklch(0.145 0 0);
   --color-card: oklch(1 0 0);
@@ -21,8 +22,14 @@
   --color-border: oklch(0.922 0 0);
   --color-input: oklch(0.922 0 0);
   --color-ring: oklch(0.451 0.124 147.73);
+
+  /* Border widths */
+  --width-border: 1px;
+
+  /* Radius */
   --radius: 0.625rem;
 
+  /* Dark mode colors */
   --color-*-dark: initial;
   --color-background-dark: oklch(0.145 0 0);
   --color-foreground-dark: oklch(0.985 0 0);
@@ -45,38 +52,31 @@
   --color-ring-dark: oklch(0.647 0.124 147.73);
 }
 
-body {
-  font-feature-settings: "rlig" 1, "calt" 1;
-  background-color: theme(colors.background);
-  color: theme(colors.foreground);
-  font-family: theme(fontFamily.sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-ring outline-offset-2;
+  }
+
+  img {
+    @apply max-w-full h-auto block;
+  }
 }
 
-* {
-  border-color: theme(colors.border);
-}
+@layer utilities {
+  .aspect-4\/3 {
+    aspect-ratio: 4 / 3;
+  }
 
-*:focus-visible {
-  outline: 2px solid theme(colors.ring);
-  outline-offset: 2px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.aspect-4\/3 {
-  aspect-ratio: 4 / 3;
-}
-
-img[src*="placeholder"] {
-  background-color: theme(colors.muted);
-  color: theme(colors.muted-foreground);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  img[src*="placeholder"] {
+    @apply bg-muted text-muted-foreground flex items-center justify-center;
+  }
 }

@@ -78,17 +78,17 @@ const featuredUnits = [
         </div>
 
         <div class="text-center">
-          <Button 
-            size="lg" 
-            disabled 
-            className="bg-muted text-muted-foreground cursor-not-allowed opacity-60" 
-            client:visible
-          >
-            <span class="flex items-center">
+            <a href="/explore">
+            <Button 
+              size="lg" 
+              client:visible
+            >
+              <span class="flex items-center">
               View All Units
               <ArrowRight class="ml-2 h-5 w-5" />
-            </span>
-          </Button>
+              </span>
+            </Button>
+            </a>
         </div>
       </div>
     </section>
@@ -142,18 +142,14 @@ const featuredUnits = [
     <section class="py-16 md:py-24 bg-primary text-primary-foreground">
       <div class="container mx-auto px-4 text-center">
         <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-balance">
-          Ready for Your Container Adventure?
+          Invest in the Future of Bayou Tourism
         </h2>
         <p class="text-xl mb-8 max-w-2xl mx-auto text-balance opacity-90">
-          Book your stay at Bayou Boxables and experience the unique charm of converted shipping container living
+          Join us in bringing this unique vacation rental experience to life. We're seeking investment partners to help launch Bayou Boxables.
         </p>
-        <Button 
-          size="lg" 
-          className="bg-white text-primary hover:bg-white/90" 
-          client:visible
-        >
-          <a href="/explore" class="flex items-center">
-            Explore Available Dates
+        <Button size="lg" variant="secondary" client:visible>
+          <a href="/invest" class="flex items-center">
+            Learn About Investment Opportunities
             <ArrowRight class="ml-2 h-5 w-5" />
           </a>
         </Button>
