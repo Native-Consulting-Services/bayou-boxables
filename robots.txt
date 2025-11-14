@@ -1,0 +1,5 @@
+# start of file
+user-agent: *
+allow: /
+
+Sitemap: https://bayouboxables.com/sitemap.xml
