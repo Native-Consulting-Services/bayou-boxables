@@ -1,5 +1,4 @@
-# start of file
-user-agent: *
-allow: /
+User-agent: *
+Allow: /
 
 Sitemap: https://bayouboxables.com/sitemap.xml
