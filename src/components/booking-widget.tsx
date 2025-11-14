@@ -62,11 +62,15 @@ export function BookingWidget({
         <CardContent className="space-y-4">
           {/* Check In */}
           <div className="space-y-2">
-            <label className="text-sm font-medium flex items-center gap-2">
+            <label
+              htmlFor="check-in"
+              className="text-sm font-medium flex items-center gap-2"
+            >
               <Calendar className="h-4 w-4" />
               Check In
             </label>
             <input
+              id="check-in"
               type="date"
               value={checkIn}
               onChange={(e) => setCheckIn(e.target.value)}
@@ -77,11 +81,15 @@ export function BookingWidget({
 
           {/* Check Out */}
           <div className="space-y-2">
-            <label className="text-sm font-medium flex items-center gap-2">
+            <label
+              htmlFor="check-out"
+              className="text-sm font-medium flex items-center gap-2"
+            >
               <Calendar className="h-4 w-4" />
               Check Out
             </label>
             <input
+              id="check-out"
               type="date"
               value={checkOut}
               onChange={(e) => setCheckOut(e.target.value)}
@@ -92,14 +100,19 @@ export function BookingWidget({
 
           {/* Guests */}
           <div className="space-y-2">
-            <label className="text-sm font-medium flex items-center gap-2">
+            <label
+              htmlFor="guests"
+              className="text-sm font-medium flex items-center gap-2"
+            >
               <Users className="h-4 w-4" />
               Guests
             </label>
             <select
+              id="guests"
               value={guests}
               onChange={(e) => setGuests(Number(e.target.value))}
               className="w-full px-3 py-2 border border-input rounded-md bg-background"
+              aria-label="Number of guests"
             >
               {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                 <option key={num} value={num}>
@@ -138,7 +151,7 @@ export function BookingWidget({
         <CardFooter>
           <Button
             onClick={handleReserve}
-            className="w-full bg-secondary hover:bg-secondary/90"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
             size="lg"
           >
             Reserve

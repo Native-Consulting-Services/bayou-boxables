@@ -61,6 +61,8 @@ export function Navigation() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
