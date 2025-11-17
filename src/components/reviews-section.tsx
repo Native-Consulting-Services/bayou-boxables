@@ -19,7 +19,7 @@ export function ReviewsSection({ reviews }: ReviewsSectionProps) {
   return (
     <div>
       <div className="flex items-center gap-4 mb-6">
-        <h2 className="font-serif text-2xl font-bold">Guest Reviews</h2>
+        <h2 className="font-raleway text-2xl font-bold">Guest Reviews</h2>
         <div className="flex items-center gap-2">
           <Star className="h-5 w-5 fill-secondary text-secondary" />
           <span className="text-xl font-bold">{averageRating.toFixed(1)}</span>

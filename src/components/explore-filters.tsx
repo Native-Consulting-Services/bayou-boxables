@@ -134,7 +134,7 @@ export function ExploreFilters() {
             } lg:block bg-card rounded-lg p-6 space-y-6`}
           >
             <div className="flex items-center justify-between">
-              <h2 className="font-serif text-2xl font-bold">Filters</h2>
+              <h2 className="font-raleway text-2xl font-bold">Filters</h2>
               {hasActiveFilters && (
                 <Button
                   onClick={clearFilters}

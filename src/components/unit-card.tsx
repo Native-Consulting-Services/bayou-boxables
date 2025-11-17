@@ -30,7 +30,7 @@ export function UnitCard({ unit }: UnitCardProps) {
         />
       </div>
       <CardContent className="p-6">
-        <h3 className="font-serif text-2xl font-bold mb-3 text-foreground">
+        <h3 className="font-raleway text-2xl font-bold mb-3 text-foreground">
           {unit.name}
         </h3>
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">

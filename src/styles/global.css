@@ -29,6 +29,10 @@
   /* Radius */
   --radius: 0.625rem;
 
+  /* Font families */
+  --font-family-raleway: "Raleway", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
   /* Dark mode colors */
   --color-*-dark: initial;
   --color-background-dark: oklch(0.145 0 0);
@@ -74,6 +78,12 @@
 @layer utilities {
   .aspect-4\/3 {
     aspect-ratio: 4 / 3;
+  }
+
+  .font-raleway {
+    font-family: "Raleway", ui-sans-serif, system-ui, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
   }
 
   img[src*="placeholder"] {

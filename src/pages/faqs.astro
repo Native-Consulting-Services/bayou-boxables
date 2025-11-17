@@ -138,7 +138,7 @@ const faqs = [
           <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
             <HelpCircle className="h-8 w-8 text-primary" />
           </div>
-          <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+          <h1 class="font-raleway text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
           <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
             Find answers to common questions about staying at Bayou Boxables
           </p>
@@ -149,7 +149,7 @@ const faqs = [
           {faqs.map((category, categoryIndex) => (
             <Card key={categoryIndex}>
               <CardContent className="pt-6">
-                <h2 class="font-serif text-2xl font-bold mb-4 text-primary">{category.category}</h2>
+                <h2 class="font-raleway text-2xl font-bold mb-4 text-primary">{category.category}</h2>
                 <FAQAccordion 
                   questions={category.questions} 
                   categoryIndex={categoryIndex}
@@ -163,7 +163,7 @@ const faqs = [
         {/* Contact CTA */}
         <!-- <Card className="mt-12 bg-primary text-primary-foreground">
           <CardContent className="pt-6 text-center">
-            <h2 class="font-serif text-2xl font-bold mb-4">Still Have Questions?</h2>
+            <h2 class="font-raleway text-2xl font-bold mb-4">Still Have Questions?</h2>
             <p class="text-lg mb-6 opacity-90">
               We're here to help! Reach out to us and we'll get back to you as soon as possible.
             </p>
