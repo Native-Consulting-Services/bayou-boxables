@@ -34,6 +34,9 @@ export function InvestorForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+  // Debug: Log when component mounts
+  console.log("InvestorForm component rendered");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -99,7 +102,7 @@ export function InvestorForm() {
             </h3>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="fullName">
+                <Label htmlFor="fullName" className="pb-2">
                   Full Name <span className="text-destructive">*</span>
                 </Label>
                 <Input
@@ -112,7 +115,7 @@ export function InvestorForm() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">
+                <Label htmlFor="email" className="pb-2">
                   Email <span className="text-destructive">*</span>
                 </Label>
                 <Input
@@ -126,7 +129,7 @@ export function InvestorForm() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">
+                <Label htmlFor="phone" className="pb-2">
                   Phone Number <span className="text-destructive">*</span>
                 </Label>
                 <Input
@@ -140,7 +143,9 @@ export function InvestorForm() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="company">Company/Organization (Optional)</Label>
+                <Label htmlFor="company" className="pb-2">
+                  Company/Organization (Optional)
+                </Label>
                 <Input
                   id="company"
                   name="company"
@@ -161,7 +166,7 @@ export function InvestorForm() {
             </h3>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="investmentRange">
+                <Label htmlFor="investmentRange" className="pb-2">
                   Investment Amount Range{" "}
                   <span className="text-destructive">*</span>
                 </Label>
@@ -182,7 +187,7 @@ export function InvestorForm() {
                 </select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="timeline">
+                <Label htmlFor="timeline" className="pb-2">
                   Investment Timeline{" "}
                   <span className="text-destructive">*</span>
                 </Label>
@@ -202,7 +207,7 @@ export function InvestorForm() {
                 </select>
               </div>
               <div className="space-y-2 md:col-span-2">
-                <Label htmlFor="investorType">
+                <Label htmlFor="investorType" className="pb-2">
                   Investor Type <span className="text-destructive">*</span>
                 </Label>
                 <select
@@ -246,14 +251,14 @@ export function InvestorForm() {
                 />
                 <Label
                   htmlFor="hasExperience"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 pb-2 pl-2"
                 >
                   I have experience with hospitality or real estate investments
                 </Label>
               </div>
               {formData.hasExperience && (
                 <div className="space-y-2">
-                  <Label htmlFor="experienceDetails">
+                  <Label htmlFor="experienceDetails" className="pb-2">
                     Please describe your experience
                   </Label>
                   <Textarea
@@ -278,7 +283,7 @@ export function InvestorForm() {
             </h3>
             <div className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="hearAbout">
+                <Label htmlFor="hearAbout" className="pb-2">
                   How did you hear about Bayou Boxables?{" "}
                   <span className="text-destructive">*</span>
                 </Label>
@@ -300,7 +305,7 @@ export function InvestorForm() {
                 </select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message">
+                <Label htmlFor="message" className="pb-2">
                   Message or Questions{" "}
                   <span className="text-destructive">*</span>
                 </Label>
@@ -330,6 +335,7 @@ export function InvestorForm() {
             size="lg"
             className="min-w-[200px]"
             disabled={isSubmitting}
+            key="submit-button"
           >
             {isSubmitting ? "Submitting..." : "Submit Investment Inquiry"}
           </Button>
